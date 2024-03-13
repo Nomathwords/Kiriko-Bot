@@ -14,8 +14,6 @@ client = discord.Client(intents = intents)
 @tasks.loop()
 async def randomly_send_voiceline():
 
-    print("Starting routine")
-
     # A variety of Kiriko's voicelines
     voicelines = ["Carried on the wind", "Let me balance you out", "Like a gentle rain", "The breeze brings relief", 
                   "Ho ho hey", "Huh, lonely in here", "Aw, I feel all warm inside", "What's up?", "I could use a heal",
@@ -31,8 +29,7 @@ async def randomly_send_voiceline():
     random_channel = randbelow(len(channels))
 
     # Set how many seconds until the task is executed again
-    randomly_send_voiceline.change_interval(seconds = randbelow(86401))
-    print(randomly_send_voiceline.seconds)
+    randomly_send_voiceline.change_interval(seconds = randbelow(28801))
 
     channel = client.get_channel(channels[random_channel])
     await channel.send(voicelines[random_voiceline])
@@ -44,7 +41,7 @@ async def on_ready():
     print("Ready!")
 
     # Wait a random amount of seconds until we send the first voiceline
-    await asyncio.sleep(randbelow(86401))
+    await asyncio.sleep(randbelow(28801))
     await randomly_send_voiceline.start()
 
 # This needs the bot's token, which only Hunter has
