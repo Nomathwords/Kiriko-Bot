@@ -21,8 +21,8 @@ async def randomly_send_voiceline():
                   "I'm obviously the most precious", "Scry some more!", "You can still be good... while being up to no good",
                   "Lure me out... I dare you", "Just don't get caught"]
 
-    # general, overwatch, fartnite
-    channels = [1137914246206857236, 1215366792277524590, 1214626990548717569]
+    # bot-commands, overwatch, fartnite
+    channels = [1214641001059192853, 1215366792277524590, 1214626990548717569]
 
     # Randomly generate which voiceline and channel to use
     random_voiceline = randbelow(len(voicelines))
